@@ -1,4 +1,6 @@
-# krja_vue_pwa
+# Kłodawski Rozkład Jazdy Autobusów
+
+VUE CLI v3
 
 ## Project setup
 ```
