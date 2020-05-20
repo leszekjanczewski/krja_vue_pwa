@@ -1,6 +1,8 @@
 # Kłodawski Rozkład Jazdy Autobusów
 
-VUE CLI v3
+Aplikacja z rozkładem jazdy autobusów w Kłodawie Gorzowskiej.
+
+VUE CLI v3 
 
 ## Project setup
 ```
