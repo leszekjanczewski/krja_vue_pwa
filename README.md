@@ -2,8 +2,8 @@
 
 Aplikacja z rozkładem jazdy autobusów w Kłodawie Gorzowskiej.
 
-[*] VUE CLI v3
-[*] vuetifyjs
+[] VUE CLI v3
+[] vuetifyjs
 
 ## Project setup
 ```
