@@ -1,22 +1,24 @@
 <template>
-  <div class="container">
-    <Header />
-    <AppLines />
-    <Footer />
-  </div>
+  <v-app>
+    <div class="container">
+      <Header />
+      <BusLines />
+      <Footer />
+    </div>
+  </v-app>
 </template>
 
 <script>
 import Header from '@/components/Header/Desktop/Header.vue'
 import Footer from '@/views/Footer.vue'
-import AppLines from '@/components/BusLines/Desktop/BusLines.vue'
+import BusLines from '@/components/BusLines/Desktop/BusLines.vue'
 
 export default {
   name: 'App',
 
   components: {
     Header,
-    AppLines,
+    BusLines,
     Footer
   },
 
