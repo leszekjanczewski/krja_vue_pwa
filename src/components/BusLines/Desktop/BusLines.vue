@@ -5,7 +5,7 @@
           <template v-slot:activator="{ on }">
             <v-btn v-on="on">1A</v-btn>
           </template>
-          <span>Róźanki - Gorzów</span>
+          <span>Różanki/Wojcieszyce - Gorzów</span>
         </v-tooltip>
       </v-col>
       <v-col class="text-center" cols="1">
@@ -21,7 +21,7 @@
           <template v-slot:activator="{ on }">
             <v-btn v-on="on">2A</v-btn>
           </template>
-          <span>Kłdawa</span>
+          <span>Gorzów - Santocko - Kłodawa - Gorzów</span>
         </v-tooltip>
       </v-col>
       <v-col class="text-center" cols="1">
@@ -29,7 +29,7 @@
           <template v-slot:activator="{ on }">
             <v-btn v-on="on">2B</v-btn>
           </template>
-          <span>Kłdawa</span>
+          <span>Gorzów - Chwalęcice - Santocko - Gorzów</span>
         </v-tooltip>
       </v-col>
       <v-col class="text-center" cols="1">
@@ -37,7 +37,7 @@
           <template v-slot:activator="{ on }">
             <v-btn v-on="on">3A</v-btn>
           </template>
-          <span>Kłdawa</span>
+          <span>Gorzów - Kłodawa - Łośno - Zdrosiko - Różanki - Gorzów</span>
         </v-tooltip>
       </v-col>
       <v-col class="text-center" cols="1">
@@ -45,7 +45,7 @@
           <template v-slot:activator="{ on }">
             <v-btn v-on="on">3B</v-btn>
           </template>
-          <span>Kłdawa</span>
+          <span>Gorzów - Różanki - Zdrosiko - Łośno - Kłodawa - Gorzów</span>
         </v-tooltip>
       </v-col>
       <v-col class="text-center" cols="1">
@@ -53,7 +53,7 @@
           <template v-slot:activator="{ on }">
             <v-btn v-on="on">3C</v-btn>
           </template>
-          <span>Kłdawa</span>
+          <span>Gorzów - Kłodawa - Łośno - Zdroisko - Wojcieszyce - Kłodawa - Gorzów</span>
         </v-tooltip>
       </v-col>
       <v-col class="text-center" cols="1">
@@ -61,7 +61,7 @@
           <template v-slot:activator="{ on }">
             <v-btn v-on="on">3D</v-btn>
           </template>
-          <span>Kłdawa</span>
+          <span>Gorzów - Kłodawa - Wojcieszyce - Zdroisko - Łośno - Kłodawa - Gorzów</span>
         </v-tooltip>
       </v-col>
     </v-row>
