@@ -1,5 +1,13 @@
 <template>
-    <div>
-        <h1>Home View</h1>
-    </div>
+    <BusLines />
 </template>
+
+<script>
+import BusLines from '@/components/BusLines/Desktop/BusLines.vue'
+
+export default {
+  components: {
+    BusLines
+  }
+}
+</script>

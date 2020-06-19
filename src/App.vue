@@ -2,7 +2,7 @@
   <v-app>
     <div class="container">
       <Header />
-      <BusLines />
+      <router-view></router-view>
       <Footer />
     </div>
   </v-app>
@@ -11,14 +11,12 @@
 <script>
 import Header from '@/components/Header/Desktop/Header.vue'
 import Footer from '@/views/Footer.vue'
-import BusLines from '@/components/BusLines/Desktop/BusLines.vue'
 
 export default {
   name: 'App',
 
   components: {
     Header,
-    BusLines,
     Footer
   },
 
