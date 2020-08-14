@@ -1,5 +1,11 @@
 <template>
-    <div>
+    <v-row class="about">
         <h1>About view</h1>
-    </div>
+    </v-row>
 </template>
+
+<style lang="less" scoped>
+    .about {
+        margin-top: 30px;
+    }
+</style>
