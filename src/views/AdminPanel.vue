@@ -1,15 +1,54 @@
 <template>
+<div>
   <v-row class="admin-buttons">
-    <v-btn class="admin-button">Linie autobusowe</v-btn>
-    <v-btn class="admin-button">Przystanki</v-btn>
-    <v-btn class="admin-button">Godziny odjazdów</v-btn>
+    <v-btn class="admin-button" v-on:click="selectLine">Linie autobusowe</v-btn>
+    <v-btn class="admin-button" v-on:click="selectStation">Przystanki</v-btn>
+    <v-btn class="admin-button" v-on:click="selectDeparture">Godziny odjazdów</v-btn>
   </v-row>
+  <div>
+    <add-line v-if="addLine"></add-line>
+    <add-station v-if="addStation"></add-station>
+    <add-departure v-if="addDeparture"></add-departure>
+  </div>
+</div>
 </template>
 
 <script>
+import AdminAddLine from '../components/AdminAddLine/AddLine.vue'
+import AdminAddStation from '../components/AdminAddStation/AdminAddStation.vue'
+import AdminAddDeparture from '../components/AdminAddDeparture/AdminAddDeparture.vue'
+
 export default {
   name: 'AdminPanel',
-  data: () => ({})
+  components: {
+    'add-line': AdminAddLine,
+    'add-station': AdminAddStation,
+    'add-departure': AdminAddDeparture
+  },
+  data () {
+    return {
+      addLine: false,
+      addStation: false,
+      addDeparture: false
+    }
+  },
+  methods: {
+    selectLine () {
+      this.addLine = true
+      this.addStation = false
+      this.addDeparture = false
+    },
+    selectStation () {
+      this.addLine = false
+      this.addStation = true
+      this.addDeparture = false
+    },
+    selectDeparture () {
+      this.addLine = false
+      this.addStation = false
+      this.addDeparture = true
+    }
+  }
 }
 </script>
 
