@@ -21,7 +21,7 @@
       </thead>
       <tbody>
         <tr
-          v-for="line in lines"
+          v-for="(line, key) in lines"
           :key="line.id"
         >
           <td>{{ line.id }}</td>
@@ -35,6 +35,7 @@
                 dark
                 x-small
                 color="error"
+                @click="removeLine(key)"
               >
                 <v-icon dark>
                   mdi-minus
@@ -86,7 +87,7 @@ export default {
           description: 'Gorzów-Kłodawa-Santocko-Kłodawa-Gorzów'
         },
         {
-          id: 1,
+          id: 3,
           name: '2C',
           description: 'Gorzów-Kłodawa-Santocko-Kłodawa-Gorzów'
         }
@@ -100,6 +101,9 @@ export default {
     },
     closeModal () {
       this.isModalVisible = false
+    },
+    removeLine (index) {
+      this.lines.splice(index, 1)
     }
   }
 }
