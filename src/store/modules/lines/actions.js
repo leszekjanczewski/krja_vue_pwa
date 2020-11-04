@@ -6,7 +6,9 @@ export default {
       description: data.description
     }
 
-    const response = await fetch(`https://krja-vue-pwa.firebaseio.com/lines/${lineId}.json`, {
+    const token = context.rootState.idToken
+
+    const response = await fetch(`https://krja-vue-pwa.firebaseio.com/lines/${lineId}.json?auth=` + token, {
       method: 'PUT',
       body: JSON.stringify(line)
     })
@@ -21,5 +23,29 @@ export default {
       ...line,
       id: lineId
     })
+  },
+  async loadLines (context) {
+    const response = await fetch(
+      'https://krja-vue-pwa.firebaseio.com/lines.json'
+    )
+
+    const responseData = await response.json()
+
+    if (!response.ok) {
+      // TODO: error ..
+    }
+
+    const lines = []
+
+    for (const key in responseData) {
+      const line = {
+        id: key,
+        name: responseData[key].name,
+        description: responseData[key].description
+      }
+      lines.push(line)
+    }
+
+    context.commit('setLines', lines)
   }
 }
