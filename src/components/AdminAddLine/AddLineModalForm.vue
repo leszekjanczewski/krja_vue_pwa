@@ -16,6 +16,7 @@
       class="mr-4"
       color="primary"
       @click="submit"
+      :disabled="!name"
     >
       Dodaj
     </v-btn>
@@ -40,9 +41,10 @@
 
 <script>
 export default {
-  name: 'modal',
+  emits: ['save-data'],
   data () {
     return {
+      id: '',
       name: '',
       description: ''
     }
@@ -54,6 +56,17 @@ export default {
     clear () {
       this.name = ''
       this.description = ''
+    },
+    submit () {
+      const line = {
+        id: this.$store.getters['lines/lineId'],
+        name: this.name,
+        description: this.description
+      }
+      this.$emit('save-data', line)
+      this.name = ''
+      this.description = ''
+      this.$emit('close')
     }
   }
 }

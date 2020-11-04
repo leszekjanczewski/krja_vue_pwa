@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import axiosInstance from '../axios-auth'
 import router from '@/router/index'
 
+import linesModule from '../store/modules/lines/index.js'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -42,6 +44,7 @@ export default new Vuex.Store({
     }
   },
   modules: {
+    lines: linesModule
   },
   getters: {
     user (state) {

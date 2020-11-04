@@ -3,7 +3,7 @@
   <v-btn class="mx-2" fab dark color="indigo" @click="showModal">
     <v-icon dark> mdi-plus </v-icon>
   </v-btn>
-    <v-simple-table>
+    <v-simple-table v-if="hasLines">
     <template v-slot:default>
       <thead>
         <tr>
@@ -58,7 +58,9 @@
       </tbody>
     </template>
   </v-simple-table>
-  <modal
+  <h3 v-else>Braki linii autobusowych</h3>
+  <add-line-modal-form
+      @save-data="addLine"
       v-show="isModalVisible"
       @close="closeModal"
     />
@@ -66,36 +68,30 @@
 </template>
 
 <script>
-import modal from './AddLineModalForm.vue'
+import AddLineModalForm from './AddLineModalForm.vue'
 
 export default {
   name: 'AddLine',
   components: {
-    modal
+    AddLineModalForm
+  },
+  computed: {
+    lines () {
+      return this.$store.getters['lines/lines']
+    },
+    hasLines () {
+      return this.$store.getters['lines/hasLines']
+    }
   },
   data () {
     return {
-      lines: [
-        {
-          id: 1,
-          name: '2A',
-          description: 'Gorzów-Kłodawa-Santocko-Kłodawa-Gorzów'
-        },
-        {
-          id: 2,
-          name: '2B',
-          description: 'Gorzów-Kłodawa-Santocko-Kłodawa-Gorzów'
-        },
-        {
-          id: 3,
-          name: '2C',
-          description: 'Gorzów-Kłodawa-Santocko-Kłodawa-Gorzów'
-        }
-      ],
       isModalVisible: false
     }
   },
   methods: {
+    addLine (data) {
+      this.$store.dispatch('lines/addLine', data)
+    },
     showModal () {
       this.isModalVisible = true
     },
