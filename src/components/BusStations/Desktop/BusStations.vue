@@ -8,9 +8,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in desserts" :key="item.name">
-          <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
+        <tr>
+          <td>przystanek</td>
+          <td>godzina</td>
         </tr>
       </tbody>
     </template>

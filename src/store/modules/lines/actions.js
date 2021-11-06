@@ -45,7 +45,6 @@ export default {
       }
       lines.push(line)
     }
-
     context.commit('setLines', lines)
   }
 }

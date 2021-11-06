@@ -92,6 +92,7 @@ export default {
   methods: {
     addLine (data) {
       this.$store.dispatch('lines/addLine', data)
+      this.loadLines()
     },
     showModal () {
       this.isModalVisible = true
@@ -100,7 +101,6 @@ export default {
       this.isModalVisible = false
     },
     removeLine (index) {
-      this.lines.splice(index, 1)
     },
     async loadLines () {
       this.isLoading = true
